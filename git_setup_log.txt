@@ -1,0 +1,7 @@
+=== git init === 
+Initialized empty Git repository in F:/PROJECTS/Pendo/.git/
+=== branch main === 
+=== config === 
+=== remote === 
+error: No such remote: 'origin'
+=== add === 
