@@ -55,20 +55,20 @@ export default function Navbar() {
               link.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(link.href);
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={classNames(
-                  "relative text-sm font-medium transition-colors",
-                  active
-                    ? "text-burgundy-600"
-                    : "text-charcoal-900/70 hover:text-charcoal-900",
-                )}
-              >
-                {link.label}
-              </Link>
-            );
+             return (
+               <Link
+                 key={link.href}
+                 href={link.href}
+                 className={classNames(
+                   "relative text-sm font-medium transition-colors",
+                   active
+                     ? "text-burgundy-600"
+                     : "text-charcoal-900/90 hover:text-charcoal-900",
+                 )}
+               >
+                 {link.label}
+               </Link>
+             );
           })}
         </div>
 

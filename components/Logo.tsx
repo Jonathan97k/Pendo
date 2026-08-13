@@ -18,7 +18,7 @@ export default function Logo({ className, iconOnly = false }: LogoProps) {
       aria-label="Pendo's Treats - Home"
     >
       <Image
-        src="/logo.png"
+        src="/images/logo.png"
         alt="Pendo's Treats logo"
         width={192}
         height={192}
