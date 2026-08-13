@@ -37,6 +37,7 @@ next-env.d.ts
 
 # Source assets that are duplicated into public/images (keep the repo lean)
 /1000*.webp
+/logo.png
 
 # Local git helper scripts (not part of the website)
 /git_setup.bat

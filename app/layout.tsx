@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import Toast from "@/components/Toast";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export const metadata: Metadata = {
   title:
@@ -28,6 +29,10 @@ export const metadata: Metadata = {
     description:
       "Order delicious freshly prepared chapati, chicken shawarma and samosas from Pendo's Treats in Area 49, Lilongwe, Malawi.",
   },
+  icons: {
+    icon: "/images/logo-192.png",
+    apple: "/images/logo-192.png",
+  },
 };
 
 export const viewport: Viewport = {
@@ -44,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <LoadingScreen />
         <CartProvider>
           <Navbar />
           <main>{children}</main>

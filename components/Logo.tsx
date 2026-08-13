@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChefHat } from "lucide-react";
+import Image from "next/image";
 import { classNames } from "@/lib/utils";
 
 type LogoProps = {
@@ -17,9 +17,13 @@ export default function Logo({ className, iconOnly = false }: LogoProps) {
       )}
       aria-label="Pendo's Treats - Home"
     >
-      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-burgundy-600 text-white shadow-soft transition-transform duration-300 group-hover:scale-105">
-        <ChefHat className="h-5 w-5" aria-hidden="true" />
-      </span>
+      <Image
+        src="/logo.png"
+        alt="Pendo's Treats logo"
+        width={192}
+        height={192}
+        className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11"
+      />
       {!iconOnly && (
         <span className="leading-tight">
           <span className="block font-display text-lg font-bold tracking-tight text-charcoal-900">
