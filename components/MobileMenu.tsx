@@ -41,11 +41,11 @@ export default function MobileMenu({ open, onClose, links }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 z-50 lg:hidden" id="mobile-menu">
-  <div
-    className="absolute inset-0 bg-charcoal-900/50 backdrop-blur-sm animate-fade-in"
-    onClick={onClose}
-    aria-hidden="true"
-  />
+   <div
+     className="absolute inset-0 bg-charcoal-900 animate-fade-in"
+     onClick={onClose}
+     aria-hidden="true"
+   />
   <div
     ref={panelRef}
     role="dialog"
