@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     description:
       "Order delicious freshly prepared chapati, chicken shawarma and samosas from Pendo's Treats in Area 49, Lilongwe, Malawi.",
   },
-  icons: {
-    icon: "/images/logo-192.png",
-    apple: "/images/logo-192.png",
+  // Add manifest reference
+  other: {
+    manifest: '/manifest.json',
   },
 };
 
@@ -41,6 +41,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// Add service worker registration script
 export default function RootLayout({
   children,
 }: {
@@ -56,8 +57,25 @@ export default function RootLayout({
           <Footer />
           <CartDrawer />
           <Toast />
-        </CartProvider>
-      </body>
-    </html>
+          {/* Service Worker Registration */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/sw.js')
+                      .then((registration) => {
+                        console.log('SW registered: ', registration);
+                      })
+                      .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                      });
+                  });
+                }
+              `,
+            }}
+          />
+        </body>
+      </html>
   );
 }

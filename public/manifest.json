@@ -1,0 +1,22 @@
+{
+  "name": "Pendo's Treats",
+  "short_name": "Pendo's Treats",
+  "description": "Order delicious freshly prepared chapati, chicken shawarma and samosas from Pendo's Treats in Area 49, Lilongwe, Malawi.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF9F3",
+  "theme_color": "#7B2230",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

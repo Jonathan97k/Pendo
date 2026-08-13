@@ -41,18 +41,18 @@ export default function MobileMenu({ open, onClose, links }: MobileMenuProps) {
 
   return (
     <div className="fixed inset-0 z-50 lg:hidden" id="mobile-menu">
-      <div
-        className="absolute inset-0 bg-charcoal-900/40 backdrop-blur-sm animate-fade-in"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-      <div
-        ref={panelRef}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile navigation"
-        className="absolute inset-y-0 right-0 flex w-full max-w-xs flex-col bg-cream-50 shadow-lift animate-fade-in"
-      >
+  <div
+    className="absolute inset-0 bg-charcoal-900/50 backdrop-blur-sm animate-fade-in"
+    onClick={onClose}
+    aria-hidden="true"
+  />
+  <div
+    ref={panelRef}
+    role="dialog"
+    aria-modal="true"
+    aria-label="Mobile navigation"
+    className="absolute inset-y-0 right-0 flex w-full max-w-xs flex-col bg-cream-50 shadow-2xl animate-fade-in border-l-4 border-burgundy-600"
+  >
         <div className="flex h-16 items-center justify-between px-5">
           <Logo />
           <button
@@ -71,19 +71,19 @@ export default function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                 ? pathname === "/"
                 : pathname.startsWith(link.href);
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={onClose}
-                className={classNames(
-                  "rounded-xl px-4 py-3 text-base font-medium transition-colors",
-                  active
-                    ? "bg-burgundy-50 text-burgundy-700"
-                    : "text-charcoal-900/80 hover:bg-charcoal-900/5",
-                )}
-              >
-                {link.label}
-              </Link>
+               <Link
+                 key={link.href}
+                 href={link.href}
+                 onClick={onClose}
+                 className={classNames(
+                   "rounded-xl px-4 py-3 text-base font-medium transition-colors",
+                   active
+                     ? "bg-burgundy-50 text-burgundy-700 font-semibold"
+                     : "text-charcoal-900/80 hover:bg-charcoal-900/5",
+                 )}
+               >
+                 {link.label}
+               </Link>
             );
           })}
         </nav>
