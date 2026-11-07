@@ -31,8 +31,8 @@ export const PRODUCTS: Product[] = [
     description:
       "Freshly prepared soft chapati served with two delicious eggs.",
     price: 3000,
-    image: "/images/food-2.webp",
-    altText: "Soft chapati served with two eggs from Pendo's Treats",
+    image: "/images/chapati-eggs-pendo.webp",
+    altText: "Fresh chapati served with eggs from Pendo's Treats",
     category: "Chapati",
     available: true,
     createdAt: "2026-01-01T00:00:00.000Z",
