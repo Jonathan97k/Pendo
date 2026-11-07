@@ -7,7 +7,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Freshly prepared chicken shawarma filled with delicious chicken, fresh vegetables and tasty ingredients.",
     price: 6000,
-    image: "/images/food-1.webp",
+    image: "/images/chicken-shawarma-pendo.webp",
     altText: "Freshly prepared chicken shawarma from Pendo's Treats",
     category: "Shawarma",
     available: true,
