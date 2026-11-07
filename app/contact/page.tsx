@@ -8,7 +8,7 @@ import { BUSINESS } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact | Pendo's Treats",
   description:
-    "Get in touch with Pendo's Treats in Area 49, New Gulliver, Lilongwe. Call, WhatsApp or send us a message.",
+    "Get in touch with Pendo's Treats in Area 49, New Shire, Lilongwe. Call, WhatsApp or send us a message.",
 };
 
 export default function ContactPage() {
