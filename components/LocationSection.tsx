@@ -15,10 +15,10 @@ export default function LocationSection() {
                   <MapPin className="h-8 w-8" aria-hidden="true" />
                 </span>
                 <p className="max-w-sm font-display text-2xl font-bold">
-                  Area 49, New Gulliver, Lilongwe
+                  {BUSINESS.locationShort}
                 </p>
                 <p className="text-sm text-white/80">
-                  Find us in Area 49, New Gulliver, Lilongwe, Malawi.
+                  Find us in {BUSINESS.location}.
                 </p>
               </div>
             </div>
