@@ -148,7 +148,7 @@ export default function OrderForm() {
             rows={2}
             value={address}
             onChange={(e) => setAddress(e.target.value)}
-            placeholder="e.g. Area 49, New Gulliver, Lilongwe"
+            placeholder="e.g. Area 49, New Shire, Lilongwe"
             aria-invalid={Boolean(errors.address)}
             aria-describedby={errors.address ? "address-error" : undefined}
             className="w-full rounded-xl border border-charcoal-900/15 bg-white px-4 py-3 text-sm text-charcoal-900 shadow-sm outline-none transition-colors focus:border-burgundy-500 focus:ring-2 focus:ring-burgundy-500/20"
