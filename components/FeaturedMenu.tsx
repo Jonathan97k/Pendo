@@ -8,7 +8,7 @@ export default function FeaturedMenu() {
   const featured = PRODUCTS.slice(0, 4);
 
   return (
-    <section className="section-pad bg-cream-50">
+    <section className="bg-cream-50 py-10 sm:py-14">
       <div className="container-site">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <SectionHeading
@@ -26,13 +26,13 @@ export default function FeaturedMenu() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-charcoal-900/45">
+        <div className="mt-7 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-charcoal-900/45">
           <Utensils className="h-4 w-4 text-burgundy-600" aria-hidden="true" />
           Made with care. Served with love.
         </div>
