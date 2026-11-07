@@ -73,7 +73,7 @@ export default function Hero() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[#E9C58F]">Made fresh for you</p>
                 <p className="mt-2 font-display text-2xl font-semibold text-white sm:text-3xl">A little joy in every bite.</p>
               </div>
-              <span className="hidden rounded-full border border-white/25 bg-black/20 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm sm:inline-flex">Pendo's Treats</span>
+              <span className="hidden rounded-full border border-white/25 bg-black/20 px-4 py-2 text-xs font-medium text-white backdrop-blur-sm sm:inline-flex">Pendo&rsquo;s Treats</span>
             </div>
           </div>
 
