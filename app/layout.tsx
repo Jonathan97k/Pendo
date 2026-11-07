@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Navbar from "@/components/Navbar";
@@ -8,8 +9,7 @@ import Toast from "@/components/Toast";
 import LoadingScreen from "@/components/LoadingScreen";
 
 export const metadata: Metadata = {
-  title:
-    "Pendo's Treats | Fresh Chapati, Shawarma & Samosas in Lilongwe",
+  title: "Pendo's Treats | Fresh Chapati, Shawarma & Samosas in Lilongwe",
   description:
     "Order delicious freshly prepared chapati, chicken shawarma and samosas from Pendo's Treats in Area 49, Lilongwe, Malawi.",
   metadataBase: new URL(
@@ -29,9 +29,8 @@ export const metadata: Metadata = {
     description:
       "Order delicious freshly prepared chapati, chicken shawarma and samosas from Pendo's Treats in Area 49, Lilongwe, Malawi.",
   },
-  // Add manifest reference
   other: {
-    manifest: '/manifest.json',
+    manifest: "/manifest.json",
   },
 };
 
@@ -41,11 +40,10 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// Add service worker registration script
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en">
@@ -57,25 +55,8 @@ export default function RootLayout({
           <Footer />
           <CartDrawer />
           <Toast />
-          {/* Service Worker Registration */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                if ('serviceWorker' in navigator) {
-                  window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/sw.js')
-                      .then((registration) => {
-                        console.log('SW registered: ', registration);
-                      })
-                      .catch((registrationError) => {
-                        console.log('SW registration failed: ', registrationError);
-                      });
-                  });
-                }
-              `,
-            }}
-          />
-        </body>
-      </html>
+        </CartProvider>
+      </body>
+    </html>
   );
 }
