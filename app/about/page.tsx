@@ -60,8 +60,8 @@ export default function AboutPage() {
               Good Food, Made with Care
             </h2>
             <p className="mt-4 leading-relaxed text-charcoal-900/70">
-              Pendo&rsquo;s Treats is a proudly local food business born in Area
-              49, New Gulliver, Lilongwe. We&rsquo;re passionate about
+              Pendo&rsquo;s Treats is a proudly local food business based in Area
+              49, New Shire, Lilongwe. We&rsquo;re passionate about
               preparing delicious and satisfying food — from soft chapatis to
               flavourful chicken shawarma and crispy samosas — using fresh
               ingredients and a lot of love.
