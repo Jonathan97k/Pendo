@@ -31,12 +31,21 @@ export function fetchProducts(): Product[] {
   }
   const stored = readProductsFromStorage();
   if (stored && Array.isArray(stored)) {
-    // Apply updated defaults (including owner-approved prices) to existing
-    // browsers while retaining any products created in the admin portal.
+    // Sync approved defaults, including images and prices, while retaining
+    // custom products created in the admin portal.
     const defaultIds = new Set(PRODUCTS.map((product) => product.id));
     const syncedDefaults = PRODUCTS.map((product) => {
       const existing = stored.find((item) => item.id === product.id);
-      return existing ? { ...existing, price: product.price, name: product.name } : product;
+      return existing
+        ? {
+            ...existing,
+            name: product.name,
+            description: product.description,
+            price: product.price,
+            image: product.image,
+            altText: product.altText,
+          }
+        : product;
     });
     const customProducts = stored.filter((product) => !defaultIds.has(product.id));
     const syncedProducts = [...syncedDefaults, ...customProducts];
