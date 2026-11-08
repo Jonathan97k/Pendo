@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import Logo from "./Logo";
-import WhatsAppButton from "./WhatsAppButton";
 import { BUSINESS } from "@/lib/constants";
 
 const FOOTER_LINKS = [
@@ -14,83 +13,34 @@ const FOOTER_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-charcoal-900 text-cream-100">
-      <div className="container-site grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1.2fr]">
+    <footer className="bg-[#650b19] text-[#fff8f0]">
+      <div className="container-site grid gap-8 py-8 sm:grid-cols-2 lg:grid-cols-[1.5fr_0.8fr_1.3fr_1fr] lg:gap-10">
         <div>
-          <Logo className="[&_span]:!text-cream-100" />
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream-100/70">
-            {BUSINESS.tagline} Enjoy chapati, chicken shawarma and freshly
-            prepared treats in Lilongwe.
-          </p>
+          <Logo className="[&_span]:!text-white [&_span_span]:!text-[#ffcf00]" />
+          <p className="mt-2 text-xs italic text-white/80">{BUSINESS.tagline}</p>
         </div>
-
         <nav aria-label="Footer links">
-          <h3 className="font-display text-lg font-bold text-white">Links</h3>
-          <ul className="mt-4 space-y-3">
-            {FOOTER_LINKS.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm text-cream-100/70 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+          <h3 className="font-bold text-white">Quick Links</h3>
+          <ul className="mt-3 space-y-1.5 text-sm text-white/85">
+            {FOOTER_LINKS.map((link) => <li key={link.href}><Link href={link.href} className="hover:text-[#ffcf00]">{link.label}</Link></li>)}
           </ul>
         </nav>
-
         <div>
-          <h3 className="font-display text-lg font-bold text-white">
-            Contact
-          </h3>
-          <ul className="mt-4 space-y-3 text-sm text-cream-100/70">
-            <li className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-burgundy-100" />
-              <span>{BUSINESS.locationShort}</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <Phone className="mt-0.5 h-4 w-4 shrink-0 text-burgundy-100" />
-              <a
-                href={BUSINESS.phoneHref}
-                className="transition-colors hover:text-white"
-              >
-                {BUSINESS.phoneDisplay}
-              </a>
-            </li>
-            <li className="flex items-start gap-3">
-              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-burgundy-100" />
-              <a
-                href={`mailto:${BUSINESS.email}`}
-                className="break-all transition-colors hover:text-white"
-              >
-                {BUSINESS.email}
-              </a>
-            </li>
+          <h3 className="font-bold text-white">Contact Us</h3>
+          <ul className="mt-3 space-y-2 text-sm text-white/85">
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 shrink-0" /><a href={BUSINESS.phoneHref}>{BUSINESS.phoneDisplay}</a></li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4 shrink-0" /><a href={`mailto:${BUSINESS.email}`}>{BUSINESS.email}</a></li>
           </ul>
-          <WhatsAppButton className="mt-6" label="WhatsApp Quick Order" />
+        </div>
+        <div>
+          <h3 className="font-bold text-white">Follow Us</h3>
+          <p className="mt-3 text-sm text-white/80">Follow Pendo’s Treats for menu updates and special offers.</p>
         </div>
       </div>
-
-      <div className="border-t border-white/10">
-        <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-center text-xs text-cream-100/60 sm:flex-row sm:text-left">
-          <p>&copy; {new Date().getFullYear()} Pendo&rsquo;s Treats. All rights reserved.</p>
-          <div className="flex flex-col items-center gap-2 sm:items-end">
-            <p className="flex items-center gap-1.5">
-              Freshly made. Deliciously served.
-            </p>
-            <p>
-              Website built by{" "}
-              <a
-                href="https://kelnix.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-cream-100 transition-colors hover:text-white"
-              >
-                Kelnix
-              </a>
-            </p>
-          </div>
+      <div className="border-t border-white/15 bg-[#4b0710]">
+        <div className="container-site flex flex-col items-center justify-between gap-2 py-3 text-center text-xs text-white/75 sm:flex-row sm:text-left">
+          <p>© {new Date().getFullYear()} Pendo’s Treats. All rights reserved.</p>
+          <p>Website built by <a href="https://kelnix.vercel.app" target="_blank" rel="noopener noreferrer" className="font-bold text-[#ffcf00] hover:underline">Kelnix</a></p>
         </div>
       </div>
     </footer>
