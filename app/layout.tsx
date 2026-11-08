@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 import Toast from "@/components/Toast";
 import LoadingScreen from "@/components/LoadingScreen";
+import FloatingContact from "@/components/FloatingContact";
 
 export const metadata: Metadata = {
   title: "Pendo's Treats | Fresh Chapati, Shawarma & Samosas in Lilongwe",
@@ -55,6 +56,7 @@ export default function RootLayout({
           <Footer />
           <CartDrawer />
           <Toast />
+          <FloatingContact />
         </CartProvider>
       </body>
     </html>
