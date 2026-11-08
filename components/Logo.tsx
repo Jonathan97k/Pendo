@@ -12,25 +12,28 @@ export default function Logo({ className, iconOnly = false }: LogoProps) {
     <Link
       href="/"
       className={classNames(
-        "group inline-flex items-center gap-2.5",
+        "group inline-flex items-center gap-2.5 sm:gap-3",
         className,
       )}
       aria-label="Pendo's Treats - Home"
     >
       <Image
         src="/images/logo.png"
-        alt="Pendo's Treats logo"
+        alt="Pendo's Treats emblem"
         width={192}
         height={192}
-        className="h-10 w-10 shrink-0 rounded-xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-105 sm:h-11 sm:w-11"
+        className="h-11 w-11 shrink-0 rounded-xl object-cover shadow-soft transition-transform duration-300 group-hover:scale-105 sm:h-14 sm:w-14"
       />
       {!iconOnly && (
-        <span className="leading-tight">
-          <span className="block font-display text-lg font-bold tracking-tight text-charcoal-900">
-            PENDO&rsquo;S <span className="text-burgundy-600">TREATS</span>
+        <span className="flex flex-col leading-none">
+          <span className="font-display text-[21px] font-black italic tracking-[-0.045em] text-[#790d20] sm:text-[25px]">
+            Pendo&rsquo;s
           </span>
-          <span className="block text-[11px] font-medium uppercase tracking-[0.18em] text-charcoal-900/50">
-            Freshly made
+          <span className="mt-0.5 font-display text-[15px] font-extrabold uppercase tracking-[0.22em] text-[#d49b00] sm:text-[17px]">
+            Treats
+          </span>
+          <span className="mt-1 text-[8px] font-semibold italic tracking-[0.015em] text-[#5a2428]/75 sm:text-[9px]">
+            Good Food. Great Mood!
           </span>
         </span>
       )}
