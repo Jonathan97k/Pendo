@@ -75,9 +75,22 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col items-center justify-between gap-3 py-6 text-center text-xs text-cream-100/60 sm:flex-row sm:text-left">
           <p>&copy; {new Date().getFullYear()} Pendo&rsquo;s Treats. All rights reserved.</p>
-          <p className="flex items-center gap-1.5">
-            Freshly made. Deliciously served.
-          </p>
+          <div className="flex flex-col items-center gap-2 sm:items-end">
+            <p className="flex items-center gap-1.5">
+              Freshly made. Deliciously served.
+            </p>
+            <p>
+              Website built by{" "}
+              <a
+                href="https://kelnix.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-cream-100 transition-colors hover:text-white"
+              >
+                Kelnix
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
