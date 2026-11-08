@@ -19,7 +19,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Freshly prepared sausage shawarma wrapped with fresh vegetables and tasty ingredients.",
     price: 5500,
-    image: "/images/sausage-shawarma-pendo.jpg",
+    image: "/images/sausage-shawarma-pendo.webp",
     altText: "Fresh sausage shawarma served with vegetables in a takeaway tray from Pendo's Treats",
     category: "Shawarma",
     available: true,
