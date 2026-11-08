@@ -49,7 +49,8 @@ export function buildWhatsAppUrl(message: string): string {
 export function openWhatsAppOrder(
   items: CartItem[],
   details: OrderDetails,
-): void {
+): boolean {
   const message = buildOrderMessage(items, details);
-  window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+  const opened = window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+  return opened !== null;
 }

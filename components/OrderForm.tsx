@@ -18,6 +18,7 @@ export default function OrderForm() {
   const [notes, setNotes] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   function validate(): boolean {
     const next: FormErrors = {};
@@ -48,13 +49,16 @@ export default function OrderForm() {
       deliveryAddress: orderType === "Delivery" ? address.trim() : undefined,
       notes: notes.trim() || undefined,
     };
+    setSubmitError(null);
     setSubmitting(true);
-    // Slight delay so the UI state change is visible before opening WhatsApp.
-    window.setTimeout(() => {
-      openWhatsAppOrder(items, details);
+    // Open WhatsApp directly inside the submit gesture so mobile browsers do not block it.
+    const opened = openWhatsAppOrder(items, details);
+    if (opened) {
       clearCart();
-      setSubmitting(false);
-    }, 350);
+    } else {
+      setSubmitError("WhatsApp could not be opened. Please allow pop-ups or use the WhatsApp contact button. Your cart is still saved.");
+    }
+    setSubmitting(false);
   }
 
   return (
@@ -215,8 +219,11 @@ export default function OrderForm() {
         )}
         Place Order via WhatsApp
       </button>
+      {submitError ? (
+        <p role="alert" className="rounded-xl bg-burgundy-50 px-4 py-3 text-sm text-burgundy-800">{submitError}</p>
+      ) : null}
       <p className="text-center text-xs text-charcoal-900/50">
-        Opens WhatsApp with your order details for confirmation.
+        WhatsApp opens with your order details. Pendo will confirm availability, delivery fees and payment with you.
       </p>
     </form>
   );
