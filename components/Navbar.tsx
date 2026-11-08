@@ -39,8 +39,8 @@ export default function Navbar() {
       className={classNames(
         "sticky top-0 z-40 w-full transition-all duration-300",
         scrolled
-          ? "bg-cream-50/90 shadow-soft backdrop-blur-md"
-          : "bg-cream-50/60 backdrop-blur-sm",
+          ? "bg-cream-50 shadow-soft border-b border-charcoal-900/10"
+          : "bg-cream-50 shadow-soft border-b border-charcoal-900/10",
       )}
     >
       <nav
@@ -60,10 +60,10 @@ export default function Navbar() {
                  key={link.href}
                  href={link.href}
                  className={classNames(
-                   "relative text-sm font-medium transition-colors",
+                   "relative rounded-full px-3 py-2 text-sm font-semibold transition-colors",
                    active
-                     ? "text-burgundy-600"
-                     : "text-charcoal-900/90 hover:text-charcoal-900",
+                     ? "bg-burgundy-100 text-burgundy-800 ring-1 ring-burgundy-200"
+                     : "text-charcoal-900 hover:bg-burgundy-50 hover:text-burgundy-700",
                  )}
                >
                  {link.label}
