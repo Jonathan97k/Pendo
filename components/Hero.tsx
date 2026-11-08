@@ -1,8 +1,34 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Bike, ShieldCheck, Utensils } from "lucide-react";
 
+const marketingLines = [
+  "Shawarma & More",
+  "Freshly Made",
+  "Packed with Flavour",
+  "Crispy & Delicious",
+  "Made with Love",
+  "Your Happy Meal",
+  "Big Taste, Great Value",
+  "Fresh Food, Fast",
+  "Perfect Meal Combos",
+  "Good Food. Great Mood.",
+];
+
 export default function Hero() {
+  const [activeLine, setActiveLine] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveLine((current) => (current + 1) % marketingLines.length);
+    }, 2800);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <section className="pendo-hero relative isolate overflow-hidden text-white">
       <div className="absolute inset-0 -z-20">
@@ -13,7 +39,13 @@ export default function Hero() {
         <div className="max-w-[570px]">
           <h1 className="font-display text-5xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
             Delicious
-            <span className="mt-1 block text-[#ffcf00]">Shawarma &amp; More</span>
+            <span
+              key={activeLine}
+              aria-live="polite"
+              className="hero-marketing-line mt-1 block min-h-[1em] text-[#ffcf00]"
+            >
+              {marketingLines[activeLine]}
+            </span>
           </h1>
           <p className="mt-5 max-w-md text-lg font-medium leading-snug text-white sm:text-xl">
             Freshly made, perfectly seasoned, and delivered with love!
